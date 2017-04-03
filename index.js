@@ -17,6 +17,10 @@ app.get("/", (req, res) => {
   res.render("index");
 })
 
+app.post("/changeProp", (req, res) => {
+  
+})
+
 // Listen on port 3000
 app.listen(3000, () => {
   console.log("Listening!");
