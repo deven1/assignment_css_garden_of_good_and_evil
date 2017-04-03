@@ -4,7 +4,7 @@ const exphbs = require("express-handlebars");
 
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-//const hbs = require("hbs");
+
 
 
 // Set up form body parsing
@@ -19,11 +19,18 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(cookieParser());
 
-//hbs.registerHelper("equal", require("handlebars-helper-equal"))
+
 
 // Set up handlebars
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({
+  defaultLayout: "main",
+
+  //using npm package https://www.npmjs.com/package/handlebars-helper-equal
+  //to compare properties in handlebars template
+  helpers: { equal: require("handlebars-helper-equal") }
+}));
+
 app.set("view engine", "handlebars");
 
 app.use((req, res, next) => {
@@ -34,21 +41,11 @@ app.use((req, res, next) => {
 
 // Route handlers
 app.get("/", (req, res) => {
-  //const { cart } = req;
+
   let { radio_selection, food_selection, color_selection } = req.cookies;
-  // if (!radio_selection) radio_selection = "Neutral";
+ 
   res.render("index", {radio_selection, food_selection, color_selection});
 });
-
-// var _prePopulate = ((selectio_1) => {
-//   if(selectio_1 === "good"){
-//
-//   }
-//   else (selectio_1 === "evil"){
-//
-//   }
-//
-// });
 
 app.post("/changeProp", (req, res) => {
   console.log(req.body);

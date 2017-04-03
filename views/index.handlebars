@@ -7,19 +7,57 @@
   <div class="panel-heading">Settings</div>
   <div class="panel-body">
     <form action="/changeProp" method="post">
-      <div class="form-group">
-        <input type="radio" id="good_RB" name="radio_selection" value="good"> Good
-        <input type="radio" id="evil_RB" name="radio_selection" value="evil"> Evil
-      </div>
+
+      <!-- using npm package express-handlebars-equal -->
+
+      {{#equal radio_selection "good" }}
+        {{>_radio_selection_good}}
+      {{/equal}}
+
+      {{#equal radio_selection "evil" }}
+        {{>_radio_selection_evil}}
+      {{/equal}}
+
+      {{#equal radio_selection undefined}}
+        {{>_radio_selection_default}}
+      {{/equal}}
+
+      {{#equal radio_selection "undefined"}}
+        {{>_radio_selection_default}}
+      {{/equal}}
+
       <label for="food">Your favorite food</label>
-        <input type="text" id="food" name="food_selection" value="" placeholder="Your favorite food">
-        <select name="color_selection">
-          <option value=""></option>
-          <option value="red">Red</option>
-          <option value="yellow">Yellow</option>
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
-        </select>
+      <input type="text" id="food" name="food_selection" value="" placeholder="{{food_selection}}">
+
+      {{#equal color_selection "white" }}
+        {{>_color_selection_default}}
+      {{/equal}}
+      {{#equal color_selection "red" }}
+        {{>_color_selection_red}}
+      {{/equal}}
+      {{#equal color_selection "blue" }}
+        {{>_color_selection_blue}}
+      {{/equal}}
+      {{#equal color_selection "yellow" }}
+        {{>_color_selection_yellow}}
+      {{/equal}}
+      {{#equal color_selection "green" }}
+        {{>_color_selection_green}}
+      {{/equal}}
+      {{#equal color_selection "" }}
+        {{>_color_selection_default}}
+      {{/equal}}
+      {{#equal color_selection undefined }}
+        {{>_color_selection_default}}
+      {{/equal}}
+
+      <!-- <select name="color_selection">
+        <option value=""></option>
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+      </select> -->
         <br>
       <input type="submit" value="Submit Selections" class="btn btn-default">
     </form>
