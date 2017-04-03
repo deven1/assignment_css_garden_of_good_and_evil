@@ -3,7 +3,7 @@
 </div>-->
 
 
-<div class="panel panel-default">
+<div class="panel panel-default" id="{{color_selection}}">
   <div class="panel-heading">Settings</div>
   <div class="panel-body">
     <form action="/changeProp" method="post">
@@ -11,9 +11,24 @@
         <input type="radio" id="good_RB" name="radio_selection" value="good"> Good
         <input type="radio" id="evil_RB" name="radio_selection" value="evil"> Evil
       </div>
+
+      <label for="food">Your favorite food</label>
+        <input type="text" id="food" name="food_selection" value="" placeholder="Your favorite food">
+        <select name="color_selection">
+          <option value=""></option>
+          <option value="red">Red</option>
+          <option value="yellow">Yellow</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+        <br>
       <input type="submit" value="Submit Selections" class="btn btn-default">
     </form>
   </div>
+</div>
+
+<div class="alert alert-success" role="alert">
+  Your selection: {{food_selection}}
 </div>
 
 <!--<div class="panel panel-default">

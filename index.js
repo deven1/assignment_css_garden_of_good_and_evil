@@ -28,14 +28,28 @@ app.use((req, res, next) => {
 // Route handlers
 app.get("/", (req, res) => {
   //const { cart } = req;
-  let { radio_selection } = req.cookies;
-  if (!radio_selection) radio_selection = "Neutral";
-  res.render("index", {radio_selection});
+  let { radio_selection, food_selection, color_selection } = req.cookies;
+  // if (!radio_selection) radio_selection = "Neutral";
+  res.render("index", {radio_selection, food_selection, color_selection});
 });
 
 app.post("/changeProp", (req, res) => {
   console.log(req.body);
-  res.cookie("radio_selection", req.body.radio_selection);
+  if (req.cookies.radio_selection && !req.body.radio_selection) {
+    res.cookie("radio_selection", req.cookies.radio_selection);
+  } else {
+    res.cookie("radio_selection", req.body.radio_selection);
+  }
+  if (req.cookies.food_selection && !req.body.food_selection) {
+    res.cookie("food_selection", req.cookies.food_selection);
+  } else {
+    res.cookie("food_selection", req.body.food_selection);
+  }
+  if (req.cookies.color_selection && !req.body.color_selection) {
+    res.cookie("color_selection", req.cookies.color_selection);
+  } else {
+    res.cookie("color_selection", req.body.color_selection);
+  }
   res.redirect("back");
 });
 
