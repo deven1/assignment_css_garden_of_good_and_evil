@@ -1,5 +1,31 @@
-<form action="/changeProp" method="POST">
-  <input type="radio" name="goodOrEvil_RB" value="good"> Good
-  <input type="radio" name="goodOrEvil_RB" value="evil"> Evil
-  <button type="submit">Submit</button>
-</form>
+<div class="alert alert-success" role="alert">
+  Your selection: {{radio_selection}}
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Settings</div>
+  <div class="panel-body">
+    <form action="/changeProp" method="post">
+      <div class="form-group">
+        <input type="radio" id="good_RB" name="goodOrEvil_RB" value="good"> Good
+        <input type="radio" id="evil_RB" name="goodOrEvil_RB" value="evil"> Evil
+      </div>
+      <input type="submit" value="Submit Selections" class="btn btn-default">
+    </form>
+  </div>
+</div>
+
+<!--<div class="panel panel-default">
+  <div class="panel-heading">Settings</div>
+  <div class="panel-body">
+    <form action="/name" method="post">
+      <div class="form-group">
+        <label for="name">Change Name</label>
+        <br>
+        <input type="text" id="name" name="name" value="" placeholder="{{name}}" class="form-control">
+      </div>
+      <input type="submit" value="Save Name" class="btn btn-default">
+    </form>
+  </div>
+</div>-->
