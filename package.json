@@ -1,0 +1,25 @@
+{
+  "name": "assignment_css_garden_of_good_and_evil",
+  "version": "1.0.0",
+  "description": "Create a CSS garden that adapts to your whims.  Egle Libby",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eglital/assignment_css_garden_of_good_and_evil.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eglital/assignment_css_garden_of_good_and_evil/issues"
+  },
+  "homepage": "https://github.com/eglital/assignment_css_garden_of_good_and_evil#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0"
+  }
+}
