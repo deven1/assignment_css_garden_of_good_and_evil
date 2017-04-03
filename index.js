@@ -42,9 +42,9 @@ app.use((req, res, next) => {
 // Route handlers
 app.get("/", (req, res) => {
 
-  let { radio_selection, food_selection, color_selection } = req.cookies;
- 
-  res.render("index", {radio_selection, food_selection, color_selection});
+  let { radio_selection, food_selection, color_selection, slider_selection } = req.cookies;
+
+  res.render("index", {radio_selection, food_selection, color_selection, slider_selection});
 });
 
 app.post("/changeProp", (req, res) => {
@@ -63,6 +63,11 @@ app.post("/changeProp", (req, res) => {
     res.cookie("color_selection", req.cookies.color_selection);
   } else {
     res.cookie("color_selection", req.body.color_selection);
+  }
+  if (req.cookies.slider_selection && !req.body.slider_selection) {
+    res.cookie("slider_selection", req.cookies.slider_selection);
+  } else {
+    res.cookie("slider_selection", req.body.slider_selection);
   }
   //_prePopulate(radio_selection);
   res.redirect("back");
