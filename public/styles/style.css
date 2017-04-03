@@ -3,7 +3,7 @@
   /*background-image: url("../images/evil.jpg");
   background-size: 50%;
   background-repeat: no-repeat;
-  background-position: 50% -80%;*/
+  background-position: 50% -10%;*/
 }
 
 #good {
@@ -16,25 +16,35 @@
 
 #yellow {
   background-color: #f1c40f;
+  /*opacity: 0.7;*/
 }
 
 #red {
   background-color: #e74c3c;
+  /*opacity: 0.7;*/
 }
 
 #blue {
   background-color: #2980b9;
+  /*opacity: 0.7;*/
 }
 
 #green {
   background-color: #27ae60;
+  /*opacity: 0.7;*/
 }
 
 #high-insanity {
   font-family: 'Press Start 2P', cursive;
+  font-size: 1.3em;
 }
 
+#medium-insanity {
+  font-family: sans-serif;
+  font-size: 1.3em;
+}
 
 #low-insanity {
   font-family: 'Spirax', cursive;
+  font-size: 1.3em;
 }

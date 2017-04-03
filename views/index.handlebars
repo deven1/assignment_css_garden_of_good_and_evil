@@ -26,9 +26,11 @@
         {{>_radio_selection_default}}
       {{/equal}}
 
-      <label for="food">Your favorite food</label>
+      <label for="food_selection">Your favorite food</label>
       <input type="text" id="food" name="food_selection" value="" placeholder="{{food_selection}}">
-
+      <br>
+      <br>
+      <label for="color_selection">Your favorite color</label>
       {{#equal color_selection "white" }}
         {{>_color_selection_default}}
       {{/equal}}
@@ -50,8 +52,9 @@
       {{#equal color_selection undefined }}
         {{>_color_selection_default}}
       {{/equal}}
-
         <br>
+        <br>
+        <label for="slider_selection">Your Insanity Index</label>
         <input name="slider_selection" type="range" min="0" max="100" value="{{slider_selection}}" step="10" />
         <!-- <h4>Value = {{slider_selection}}</h4> -->
         <br>
