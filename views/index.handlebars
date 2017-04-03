@@ -51,24 +51,32 @@
         {{>_color_selection_default}}
       {{/equal}}
 
-      <!-- <select name="color_selection">
-        <option value=""></option>
-        <option value="red">Red</option>
-        <option value="yellow">Yellow</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-      </select> -->
         <br>
-        <input name="slider_selection" type="range" min="0" max="100" value="50" step="10" />
+        <input name="slider_selection" type="range" min="0" max="100" value="{{slider_selection}}" step="10" />
         <!-- <h4>Value = {{slider_selection}}</h4> -->
         <br>
+
       <input type="submit" value="Submit Selections" class="btn btn-default">
     </form>
   </div>
 </div>
 
 <div class="alert alert-success" role="alert">
-  Your selection: {{food_selection}}
+  <ul> <h3>Likes</h3>
+    <li> Favorite food: {{food_selection}} </li>
+    <li> Favorite color: {{color_selection}} </li>
+  </ul>
+  <br>
+  <ul> <h3>Dislikes</h3>
+    {{#equal radio_selection "good"}}
+      <li>Bad people</li>
+      <li>Wars</li>
+    {{/equal}}
+    {{#equal radio_selection "evil"}}
+      <li>Good people</li>
+      <li>Peace</li>
+    {{/equal}}
+  </ul>
 </div>
 
 

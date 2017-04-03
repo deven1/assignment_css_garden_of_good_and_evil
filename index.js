@@ -35,6 +35,11 @@ app.set("view engine", "handlebars");
 
 app.use((req, res, next) => {
   app.locals.radio_selection = req.cookies.radio_selection;
+  if (req.cookies.slider_selection < 40) {
+    app.locals.font_selection = "low_insanity"
+  } else if (req.cookies.slider_selection > 60) {
+    app.locals.font_selection = "high_insanity"
+  }
   next();
 });
 
